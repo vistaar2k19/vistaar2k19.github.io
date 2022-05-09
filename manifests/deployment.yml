@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: vistaarimg 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vistaarimg
+  template:
+    metadata:
+      labels:
+        app: vistaarimg 
+    spec:
+      containers:
+        - name: vistaarimg 
+          image: vistaaracr.azurecr.io/vistaarimg
+          ports:
+          - containerPort: 8080
